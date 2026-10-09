@@ -1,0 +1,469 @@
+/* =====================================
+   GENEL TASARIM
+===================================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f5f1e5;
+  background-color: #080808;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.9)),
+    url("https://user42791.na.imgto.link/public/20261009/6b83716bbde55d55be57c161-c032935b-3b34-4e00-b60d-03cbdfad846d.avif");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* =====================================
+   ANA KART
+===================================== */
+.page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 28px;
+  overflow: hidden;
+  text-align: center;
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(226, 184, 55, 0.55);
+  border-radius: 20px;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.55);
+}
+
+/* =====================================
+   PROFİL FOTOĞRAFI
+===================================== */
+.profile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  display: block;
+  width: 132px;
+  height: 132px;
+  max-width: 100%;
+  margin: 0 auto 12px;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid #e8bd43;
+  border-radius: 50%;
+  box-shadow: 0 0 22px rgba(232, 189, 67, 0.25);
+}
+
+/* =====================================
+   PROFİL BUTONLARI
+   HTML: .label ve .label.age
+===================================== */
+.profile-labels {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  margin: 10px auto 20px;
+}
+
+.profile-labels .label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 42px;
+  margin: 0;
+  padding: 10px 14px;
+  color: #ffd34f;
+  background: #080808;
+  border: 1px solid #c49b18;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.3px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* 18+ ETİKETİ */
+.profile-labels .label.age {
+  color: #ffd34f;
+  background: #080808;
+  border: 1px solid #c49b18;
+}
+
+/* =====================================
+   ANA BAŞLIK
+===================================== */
+h1 {
+  margin: 0 0 14px;
+  color: #f4c842;
+  font-size: clamp(28px, 6vw, 40px);
+  font-weight: 900;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+h1 span {
+  color: #ffd34f;
+}
+
+.description {
+  margin: 0 0 22px;
+  color: #dedbd2;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =====================================
+   ÖZELLİK KUTULARI
+===================================== */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin: 20px 0;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 95px;
+  padding: 13px 7px;
+  color: #f5e8b7;
+  background: #15140f;
+  border: 1px solid rgba(229, 184, 59, 0.3);
+  border-radius: 11px;
+  font-size: 11px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.feature-icon {
+  font-size: 21px;
+}
+
+/* =====================================
+   TELEGRAM BUTONU
+===================================== */
+.telegram-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  margin: 20px 0 12px;
+  padding: 14px 16px;
+  color: #111;
+  background: linear-gradient(135deg, #ffe078, #d9a925);
+  border: 1px solid #f7d05b;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(245, 197, 66, 0.3);
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  animation: buttonPulse 1.7s ease-in-out infinite;
+}
+
+.telegram-icon {
+  font-size: 20px;
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 12px rgba(245, 197, 66, 0.3);
+  }
+
+  50% {
+    transform: scale(1.025);
+    box-shadow: 0 0 23px rgba(245, 197, 66, 0.65);
+  }
+}
+
+.telegram-note {
+  margin: 12px 0 20px;
+  color: #aaa69b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =====================================
+   PLATFORM LOGOLARI
+===================================== */
+.platforms {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  margin: 18px 0 22px;
+}
+
+.platform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 65px;
+  padding: 9px;
+  background: #191919;
+  border: 1px solid #423923;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+.platform img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* =====================================
+   BİLGİLENDİRME
+===================================== */
+.notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 15px;
+  text-align: left;
+  color: #c8c3b5;
+  background: #121212;
+  border: 1px solid rgba(229, 184, 59, 0.28);
+  border-radius: 12px;
+}
+
+.warning-icon {
+  flex-shrink: 0;
+  color: #f0c64b;
+  font-size: 23px;
+}
+
+.notice h2 {
+  margin: 0 0 7px;
+  color: #e9c34f;
+  font-size: 14px;
+}
+
+.notice p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================
+   ALT BİLGİ
+===================================== */
+footer {
+  margin-top: 18px;
+  color: #aaa69b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+.copyright {
+  color: #d6b547;
+  letter-spacing: 1px;
+}
+
+/* =====================================
+   MOBİL EKRAN
+===================================== */
+@media screen and (max-width: 600px) {
+  body {
+    display: block;
+    padding: 12px 9px;
+    background-attachment: scroll;
+  }
+
+  .page {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 390px;
+    padding: 17px 12px;
+    border-radius: 15px;
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 8px;
+  }
+
+  .profile-labels {
+    gap: 6px;
+    margin: 8px auto 15px;
+  }
+
+  .profile-labels .label {
+    min-height: 34px;
+    padding: 7px 9px;
+    border: 1px solid #c49b18;
+    border-radius: 8px;
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+    font-size: 27px;
+  }
+
+  .description {
+    margin-bottom: 15px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .features {
+    gap: 6px;
+    margin: 14px 0;
+  }
+
+  .feature {
+    min-height: 76px;
+    padding: 9px 4px;
+    gap: 6px;
+    font-size: 9px;
+  }
+
+  .feature-icon {
+    font-size: 18px;
+  }
+
+  .telegram-button {
+    min-height: 45px;
+    margin: 14px 0 9px;
+    padding: 11px 9px;
+    font-size: 13px;
+  }
+
+  .telegram-icon {
+    font-size: 17px;
+  }
+
+  .telegram-note {
+    margin: 9px 0 14px;
+    font-size: 11px;
+  }
+
+  .platforms {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 12px 0 15px;
+  }
+
+  .platform {
+    min-height: 50px;
+    padding: 6px 10px;
+    background: #191919;
+  }
+
+  .platform img {
+    height: 31px;
+  }
+
+  .notice {
+    gap: 9px;
+    margin-top: 12px;
+    padding: 10px;
+  }
+
+  .warning-icon {
+    font-size: 19px;
+  }
+
+  .notice h2 {
+    font-size: 12px;
+  }
+
+  .notice p {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  footer {
+    margin-top: 13px;
+    font-size: 10px;
+  }
+}
+
+/* ÇOK DAR TELEFONLAR */
+@media screen and (max-width: 360px) {
+  body {
+    padding: 8px 6px;
+  }
+
+  .card {
+    padding: 14px 9px;
+  }
+
+  .profile-labels {
+    gap: 5px;
+  }
+
+  .profile-labels .label {
+    padding: 6px 7px;
+    font-size: 9px;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+
+  .feature {
+    font-size: 8px;
+  }
+}
+
+/* Hareket azaltma tercihi */
+@media (prefers-reduced-motion: reduce) {
+  .telegram-button {
+    animation: none;
+  }
+}
